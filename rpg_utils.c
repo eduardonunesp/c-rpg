@@ -1,64 +1,64 @@
 #include "rpg_utils.h"
 
-const char *rpg_weapon_type2str(rpg_weapon_type_t weapon_type)
+const char *rpg_weapon_enum2str(rpg_weapon_enum_t weapon_enum)
 {
-    switch (weapon_type) {
-        case RPG_WEAPON_TYPE_SWORD: 
+    switch (weapon_enum) {
+        case RPG_WEAPON_ENUM_SWORD: 
             return "SWORD";
-        case RPG_WEAPON_TYPE_AXE: 
+        case RPG_WEAPON_ENUM_AXE: 
             return "AXE";
-        case RPG_WEAPON_TYPE_KNIFE: 
+        case RPG_WEAPON_ENUM_KNIFE: 
             return "KNIFE";
-        case RPG_WEAPON_TYPE_HAMMER: 
+        case RPG_WEAPON_ENUM_HAMMER: 
             return "HAMMER";
-        case RPG_WEAPON_TYPE_STAFF: 
+        case RPG_WEAPON_ENUM_STAFF: 
             return "STAFF";
-        case RPG_WEAPON_TYPE_SPEAR: 
+        case RPG_WEAPON_ENUM_SPEAR: 
             return "SPEAR";
-        case RPG_WEAPON_TYPE_BOW: 
+        case RPG_WEAPON_ENUM_BOW: 
             return "BOW";
         default: 
             return "UNKNOW";
     }
 }
 
-const char *rpg_armor_type2str(rpg_armor_type_t armor_type) 
+const char *rpg_armor_enum2str(rpg_armor_enum_t armor_enum) 
 {
-    switch (armor_type) {
-        case RPG_ARMOR_TYPE_HELMET:
+    switch (armor_enum) {
+        case RPG_ARMOR_ENUM_HELMET:
             return "HELMET";
-        case RPG_ARMOR_TYPE_ARMOR:
+        case RPG_ARMOR_ENUM_ARMOR:
             return "ARMOR";
-        case RPG_ARMOR_TYPE_SHIELD:
+        case RPG_ARMOR_ENUM_SHIELD:
             return "SHIELD";
-        case RPG_ARMOR_TYPE_GLOVES:
+        case RPG_ARMOR_ENUM_GLOVES:
             return "GLOVES";
-        case RPG_ARMOR_TYPE_BOOTS:
+        case RPG_ARMOR_ENUM_BOOTS:
             return "BOOTS";
         default:
             return "UNKNOW";
     }
 }
 
-const char *rpg_race_type2str(rpg_race_t race_type)
+const char *rpg_race_enum2str(rpg_race_enum_t race_enum)
 {
-    switch (race_type) {
-        case RPG_RACE_TYPE_HUMAN:
+    switch (race_enum) {
+        case RPG_RACE_ENUM_HUMAN:
             return "HUMAN";
-        case RPG_RACE_TYPE_ELF:
+        case RPG_RACE_ENUM_ELF:
             return "ELF";
-        case RPG_RACE_TYPE_DWARF:
+        case RPG_RACE_ENUM_DWARF:
             return "DWARF";
-        case RPG_RACE_TYPE_GNOME:
+        case RPG_RACE_ENUM_GNOME:
             return "GNOME";
         default:
             return "UNKNOW";
     }
 }
 
-const char *rpg_status_type2str(rpg_status_t status_type)
+const char *rpg_status_enum2str(rpg_status_enum_t status_enum)
 {
-    switch (status_type) {
+    switch (status_enum) {
         case RPG_STATUS_SUCCESS:
             return "SUCCESS";
         case RPG_STATUS_FAIL:
