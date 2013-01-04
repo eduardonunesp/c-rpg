@@ -18,7 +18,7 @@ rpg_status_t rpg_init_person(int hp, int mp, int str, int dex, int cons, rpg_rac
     (*person)->str = str;
     (*person)->str = dex;
     (*person)->cons = cons;
-    (*person)->race = race;
+    (*person)->race_type = race;
     (*person)->equipment = NULL;
 
     return RPG_STATUS_SUCCESS;
@@ -31,5 +31,5 @@ void rpg_debug_person(rpg_person_t *person)
         return;
     }
 
-    RPG_DBG("Person HP %d MP %d RACE %d", person->hp, person->mp, person->race);
+    RPG_DBG("Person HP %d MP %d RACE %d", person->hp, person->mp, person->race_type);
 }

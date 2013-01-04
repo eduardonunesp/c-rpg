@@ -43,13 +43,13 @@ const char *rpg_armor_type2str(rpg_armor_type_t armor_type)
 const char *rpg_race_type2str(rpg_race_t race_type)
 {
     switch (race_type) {
-        case RPG_RACE_HUMAN:
+        case RPG_RACE_TYPE_HUMAN:
             return "HUMAN";
-        case RPG_RACE_ELF:
+        case RPG_RACE_TYPE_ELF:
             return "ELF";
-        case RPG_RACE_DWARF:
+        case RPG_RACE_TYPE_DWARF:
             return "DWARF";
-        case RPG_RACE_GNOME:
+        case RPG_RACE_TYPE_GNOME:
             return "GNOME";
         default:
             return "UNKNOW";

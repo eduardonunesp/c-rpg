@@ -7,7 +7,7 @@ int main(int argc, char** argv)
     rpg_status_t cause;
     rpg_person_t *person = NULL;
     
-    cause = rpg_init_person(40, 2, 10, 10, 5, RPG_RACE_HUMAN, &person);
+    cause = rpg_init_person(40, 2, 10, 10, 5, RPG_RACE_TYPE_HUMAN, &person);
     if (cause != RPG_STATUS_SUCCESS) { 
         fprintf(stderr, "Error while creates person [%s]\n", rpg_status_type2str(cause)); 
         return 0;
