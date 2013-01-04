@@ -20,6 +20,7 @@ typedef enum {
 } rpg_weapon_type_t;
 
 typedef struct {
+    char *name;
     rpg_weapon_type_t type;
     int damage;
 } rpg_weapon_t;
@@ -33,6 +34,7 @@ typedef enum {
 } rpg_armor_type_t;
 
 typedef struct {
+    char *name;
     rpg_armor_type_t type;
     int defense;
 } rpg_armor_t;
