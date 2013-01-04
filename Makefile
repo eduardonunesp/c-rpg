@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-c -Wall
 LDFLAGS=
-SOURCES=main.c rpg_person.c rpg_weapon.c
+SOURCES=main.c rpg_person.c rpg_weapon.c rpg_armor.c rpg_utils.c
 OBJECTS=$(SOURCES:.c=.o)
 EXECUTABLE=rpg
 
