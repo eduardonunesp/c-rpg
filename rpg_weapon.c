@@ -1,7 +1,6 @@
-#include "rpg_weapon.h"
+#include "rpg.h"
 #include <strings.h>
-#include "rpg_logger.h"
-#include "rpg_utils.h"
+#include "rpg.h"
 
 rpg_status_enum_t rpg_create_weapon(const char *name, rpg_weapon_enum_t type, int damage, rpg_weapon_t **weapon)
 {

@@ -1,4 +1,4 @@
-#include "rpg_utils.h"
+#include "rpg.h"
 
 const char *rpg_weapon_enum2str(rpg_weapon_enum_t weapon_enum)
 {
@@ -49,8 +49,10 @@ const char *rpg_race_enum2str(rpg_race_enum_t race_enum)
             return "ELF";
         case RPG_RACE_ENUM_DWARF:
             return "DWARF";
-        case RPG_RACE_ENUM_GNOME:
-            return "GNOME";
+        case RPG_RACE_ENUM_IMP:
+            return "IMP";
+        case RPG_RACE_ENUM_SPRITE:
+            return "SPRITE";
         default:
             return "UNKNOW";
     }

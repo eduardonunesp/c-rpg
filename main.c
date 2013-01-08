@@ -5,7 +5,7 @@
 int main(int argc, char** argv) 
 {
     rpg_status_enum_t cause;
-    rpg_person_t *person = NULL;
+    rpg_character_t *person = NULL;
     
     cause = rpg_init_person(40, 2, 10, 10, 5, RPG_RACE_ENUM_HUMAN, RPG_CLASS_ENUM_WARRIOR, RPG_MAGE_ENUM_NONE, &person);
     if (cause != RPG_STATUS_SUCCESS) { 

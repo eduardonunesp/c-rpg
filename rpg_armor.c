@@ -1,7 +1,6 @@
-#include "rpg_armor.h"
+#include "rpg.h"
 #include <strings.h>
-#include "rpg_logger.h"
-#include "rpg_utils.h"
+#include "rpg.h"
 
 rpg_status_enum_t rpg_create_armor(const char *name, rpg_armor_enum_t type, int defense, rpg_armor_t **armor)
 {
