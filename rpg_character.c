@@ -3,37 +3,35 @@
 #include <stdlib.h>
 #include "rpg.h"
 
-rpg_status_enum_t rpg_init_person(int hp, int mp, int str, int dex, int cons, 
+rpg_status_enum_t rpg_init_character(int hp, int mp, int str, int dex, int cons, 
                              rpg_race_enum_t race_type, 
                              rpg_class_enum_t class_type,
-                             rpg_mage_enum_t mage_type,
-                             rpg_character_t **person)
+                             rpg_character_t **character)
 {
-    *person = (rpg_character_t*) malloc(sizeof(rpg_character_t));
+    *character = (rpg_character_t*) malloc(sizeof(rpg_character_t));
 
-    if (!*person) {
+    if (!*character) {
         RPG_ERR(RPG_ERR_STR_MEM);
         return RPG_STATUS_MEM_ERR;
     }
 
-    (*person)->hp = hp;
-    (*person)->mp = mp;
-    (*person)->str = str;
-    (*person)->str = dex;
-    (*person)->race_type = race_type;
-    (*person)->class_type = class_type;
-    (*person)->mage_type = mage_type;
-    (*person)->equipment = NULL;
+    (*character)->hp = hp;
+    (*character)->mp = mp;
+    (*character)->str = str;
+    (*character)->str = dex;
+    (*character)->race_type = race_type;
+    (*character)->class_type = class_type;
+    (*character)->equipment = NULL;
 
     return RPG_STATUS_SUCCESS;
 }
 
-void rpg_debug_person(rpg_character_t *person) 
+void rpg_debug_character(rpg_character_t *character) 
 {
-    if (!person) {
+    if (!character) {
         RPG_ERR(RPG_ERR_STR_NULL_PTR);
         return;
     }
 
-    RPG_DBG("Person HP %d MP %d RACE %s", person->hp, person->mp, rpg_race_enum2str(person->race_type));
+    RPG_DBG("character HP %d MP %d RACE %s", character->hp, character->mp, rpg_race_enum2str(character->race_type));
 }

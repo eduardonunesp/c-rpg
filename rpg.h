@@ -32,18 +32,14 @@ typedef enum {
 } rpg_race_enum_t;
 
 typedef enum {
-    RPG_CLASS_ENUM_NONE    = 0x0, /* Ordinary */
-    RPG_CLASS_ENUM_WARRIOR = 0x1, /* Warrior  */
-    RPG_CLASS_ENUM_THIEF   = 0x2, /* Thief    */
-    RPG_CLASS_ENUM_MAGE    = 0x3, /* Mage     */
-    RPG_CLASS_ENUM_MONK    = 0x4  /* Monk     */
+    RPG_CLASS_ENUM_NONE       = 0x0, /* Ordinary */
+    RPG_CLASS_ENUM_WARRIOR    = 0x1, /* Warrior  */
+    RPG_CLASS_ENUM_THIEF      = 0x2, /* Thief    */
+    RPG_CLASS_ENUM_WHITE_MAGE = 0x3, /* White Mage */
+    RPG_CLASS_ENUM_BLACK_MAGE = 0x4, /* Black Mage */
+    RPG_CLASS_ENUM_BLUE_MAGE  = 0x5, /* Blue Mage */
+    RPG_CLASS_ENUM_MONK       = 0x6  /* Monk     */
 } rpg_class_enum_t;
-
-typedef enum {
-    RPG_MAGE_ENUM_NONE  = 0x0, /* No magic   */
-    RPG_MAGE_ENUM_BLACK = 0x1, /* Black mage */
-    RPG_MAGE_ENUM_WHITE = 0x2, /* White mage */
-} rpg_mage_enum_t;
 
 typedef enum {
     RPG_ELEMENT_ENUM_NONE  = 0x0, /* Ordinary */
@@ -69,7 +65,7 @@ typedef enum {
     RPG_ARMOR_ENUM_SHIELD = 0x3, /* Shield */
     RPG_ARMOR_ENUM_GLOVES = 0x4, /* Gloves */
     RPG_ARMOR_ENUM_BOOTS  = 0x5  /* Boots  */
-} rpg_armor_enum_t;
+} rpg_guard_enum_t;
 
 typedef enum {
     RPG_EFFECT_ENUM_NONE      = 0x0,  /* No effect, ordinary  */
@@ -88,6 +84,28 @@ typedef enum {
 } rpg_effect_enum_t;
 
 typedef enum {
+    RPG_STATUS_EFFECT_POISON     = 0x1,
+    RPG_STATUS_EFFECT_STUN       = 0x2,
+    RPG_STATUS_EFFECT_BERSERK    = 0x3, 
+    RPG_STATUS_EFFECT_CURSE      = 0x4,
+    RPG_STATUS_EFFECT_DSETENTECE = 0x5,
+    RPG_STATUS_EFFECT_BLIND      = 0x6,
+    RPG_STATUS_EFFECT_SLOW       = 0x7,
+    RPG_STATUS_EFFECT_SLEEP      = 0x8,
+    RPG_STATUS_EFFECT_SEAL       = 0x9,
+    RPG_STATUS_EFFECT_FROG       = 0xa,
+    RPG_STATUS_EFFECT_MINI       = 0xb,
+    RPG_STATUS_EFFECT_CONFUSE    = 0xc,
+    RPG_STATUS_EFFECT_STOP       = 0xd,
+    RPG_STATUS_EFFECT_STONE      = 0xe,
+    RPG_STATUS_EFFECT_MBARRIER   = 0xf,
+    RPG_STATUS_EFFECT_HAST       = 0x10,
+    RPG_STATUS_EFFECT_REGEN      = 0x11,
+    RPG_STATUS_EFFECT_RERAISE    = 0x12,
+    RPG_STATUS_EFFECT_WALL       = 0x13
+} rpg_status_effect_enum_t;
+
+typedef enum {
     RPG_ITEM_ENUM_POTION = 0x1, /* Potion */
     RPG_ITEM_ENUM_KEY    = 0x2, /* Key    */
 } rpg_item_enum_t;
@@ -103,12 +121,20 @@ typedef struct {
 
 typedef struct {
     char *name;                            /* Armor name */
-    rpg_armor_enum_t type;                 /* Ammor type: helmet, shield, armor, gloves, boots */
     rpg_effect_enum_t self_effect_type;    /* Self effect, means effect over the user */
     rpg_effect_enum_t target_effect_type;  /* Target effect, means effect over the agressor */
     rpg_element_enum_t element_type;       /* Element type, passive effect over target or user */
     int defense;                           /* Defense, bonus to absorb damage */
 } rpg_armor_t;
+
+typedef struct {
+    char *name;                           /* Armor name */
+    rpg_guard_enum_t type;                /* Ammor type: helmet, shield, armor, gloves, boots */
+    rpg_effect_enum_t self_effect_type;   /* Self effect, means effect over the user */
+    rpg_effect_enum_t target_effect_type; /* Target effect, means effect over the agressor */
+    rpg_element_enum_t element_type;      /* Element type, passive effect over target or user */
+    int defense;                          /* Defense, bonus to absorb damage */
+} rpg_guard_t;
 
 typedef struct {
     char *name;            /* Item name */
@@ -124,15 +150,15 @@ typedef union {
 typedef union {
     rpg_weapon_t *weapon; /* An arm can hold a weapon */
     rpg_armor_t *armor;   /* An arm can hold a shield */
-} rpg_person_arm_t;
+} rpg_character_arm_t;
 
 typedef struct {
     rpg_armor_t *head;           /* Equipment on head      */
     rpg_armor_t *body;           /* Equipment on body      */ 
     rpg_armor_t *legs;           /* Equipment on legs      */
-    rpg_person_arm_t *left_arm;  /* Equipment on left arm  */
-    rpg_person_arm_t *right_arm; /* Equipment on right arm */
-} rpg_person_equipment_t;
+    rpg_character_arm_t *left_arm;  /* Equipment on left arm  */
+    rpg_character_arm_t *right_arm; /* Equipment on right arm */
+} rpg_character_equipment_t;
 
 typedef struct {
     int hp;                            /* Hit point             */
@@ -144,24 +170,29 @@ typedef struct {
     int agi;                           /* Agility               */
     rpg_race_enum_t  race_type;        /* Race                  */
     rpg_class_enum_t class_type;       /* Class                 */
-    rpg_mage_enum_t  mage_type;        /* Mage ? White Or Black */
-    rpg_person_equipment_t *equipment; /* Equipment used        */
+    rpg_character_equipment_t *equipment; /* Equipment used        */
 } rpg_character_t;
 
-rpg_status_enum_t rpg_init_person(int hp, int mp, int str, int dex, int cons, 
+/* Create characters in game */
+rpg_status_enum_t rpg_init_character(int hp, int mp, int str, int dex, int cons, 
                                  rpg_race_enum_t race_type, 
                                  rpg_class_enum_t class_type,
-                                 rpg_mage_enum_t mage_type,
-                                 rpg_character_t **person);
+                                 rpg_character_t **character);
 
-void rpg_debug_person(rpg_character_t *person);
 
+/* Useful debug information */
+void rpg_debug_character(rpg_character_t *character);
+
+/* Create everything in game */
+rpg_status_enum_t rpg_create_weapon(const char *name, rpg_weapon_enum_t type, int damage, rpg_weapon_t **weapon);
+rpg_status_enum_t rpg_create_armor(const char *name, int defense, rpg_armor_t **armor);
+rpg_status_enum_t rpg_create_guard(const char *name, rpg_guard_enum_t type, int defense, rpg_guard_t **guard);
+
+/* Enumerator to string, the verbose */
 const char *rpg_weapon_enum2str(rpg_weapon_enum_t weapon_enum);
-const char *rpg_armor_enum2str(rpg_armor_enum_t armor_enum);
 const char *rpg_race_enum2str(rpg_race_enum_t race_enum);
+const char *rpg_guard_enum2str(rpg_guard_enum_t guard_enum);
 const char *rpg_status_enum2str(rpg_status_enum_t status_enum);
 
-rpg_status_enum_t rpg_create_weapon(const char *name, rpg_weapon_enum_t type, int damage, rpg_weapon_t **weapon);
-rpg_status_enum_t rpg_create_armor(const char *name, rpg_armor_enum_t type, int defense, rpg_armor_t **armor);
 
 #endif

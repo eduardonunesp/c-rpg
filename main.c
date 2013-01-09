@@ -5,11 +5,11 @@
 int main(int argc, char** argv) 
 {
     rpg_status_enum_t cause;
-    rpg_character_t *person = NULL;
+    rpg_character_t *character = NULL;
     
-    cause = rpg_init_person(40, 2, 10, 10, 5, RPG_RACE_ENUM_HUMAN, RPG_CLASS_ENUM_WARRIOR, RPG_MAGE_ENUM_NONE, &person);
+    cause = rpg_init_character(40, 2, 10, 10, 5, RPG_RACE_ENUM_HUMAN, RPG_CLASS_ENUM_WARRIOR, &character);
     if (cause != RPG_STATUS_SUCCESS) { 
-        fprintf(stderr, "Error while creates person [%s]\n", rpg_status_enum2str(cause)); 
+        fprintf(stderr, "Error while creates character [%s]\n", rpg_status_enum2str(cause)); 
         return 0;
     }
 
@@ -27,8 +27,8 @@ int main(int argc, char** argv)
         return 0;
     }
 
-    rpg_debug_person(person);
-    free(person);
+    rpg_debug_character(character);
+    free(character);
     free(weapon_sword);
 
     return 0;

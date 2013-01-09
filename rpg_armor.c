@@ -2,7 +2,7 @@
 #include <strings.h>
 #include "rpg.h"
 
-rpg_status_enum_t rpg_create_armor(const char *name, rpg_armor_enum_t type, int defense, rpg_armor_t **armor)
+rpg_status_enum_t rpg_create_armor(const char *name, int defense, rpg_armor_t **armor)
 {
     *armor = (rpg_armor_t*) malloc(sizeof(rpg_armor_t));
     
@@ -12,9 +12,8 @@ rpg_status_enum_t rpg_create_armor(const char *name, rpg_armor_enum_t type, int 
     }
 
     (*armor)->name = strdup(name);
-    (*armor)->type = type;
     (*armor)->defense = defense;
     
-    RPG_DBG("Armor created [%s, %s, %d]", rpg_armor_enum2str(type), name, defense);
+    RPG_DBG("Armor created [%s, %d]", name, defense);
     return RPG_STATUS_SUCCESS;
 }
