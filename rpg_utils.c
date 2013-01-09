@@ -25,13 +25,13 @@ const char *rpg_weapon_enum2str(rpg_weapon_enum_t weapon_enum)
 const char *rpg_guard_enum2str(rpg_guard_enum_t guard_enum) 
 {
     switch (guard_enum) {
-        case RPG_ARMOR_ENUM_HELMET:
+        case RPG_GUARD_ENUM_HELMET:
             return "HELMET";
-        case RPG_ARMOR_ENUM_SHIELD:
+        case RPG_GUARD_ENUM_SHIELD:
             return "SHIELD";
-        case RPG_ARMOR_ENUM_GLOVES:
+        case RPG_GUARD_ENUM_GLOVES:
             return "GLOVES";
-        case RPG_ARMOR_ENUM_BOOTS:
+        case RPG_GUARD_ENUM_BOOTS:
             return "BOOTS";
         default:
             return "UNKNOW";

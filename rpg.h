@@ -32,13 +32,14 @@ typedef enum {
 } rpg_race_enum_t;
 
 typedef enum {
-    RPG_CLASS_ENUM_NONE       = 0x0, /* Ordinary */
-    RPG_CLASS_ENUM_WARRIOR    = 0x1, /* Warrior  */
-    RPG_CLASS_ENUM_THIEF      = 0x2, /* Thief    */
-    RPG_CLASS_ENUM_WHITE_MAGE = 0x3, /* White Mage */
-    RPG_CLASS_ENUM_BLACK_MAGE = 0x4, /* Black Mage */
-    RPG_CLASS_ENUM_BLUE_MAGE  = 0x5, /* Blue Mage */
-    RPG_CLASS_ENUM_MONK       = 0x6  /* Monk     */
+    RPG_CLASS_ENUM_NONE       = 0x0, /* Ordinary   */
+    RPG_CLASS_ENUM_WARRIOR    = 0x1, /* Warrior    */
+    RPG_CLASS_ENUM_THIEF      = 0x2, /* Thief      */
+    RPG_CLASS_ENUM_RED_MAGE   = 0x3, /* Red Mage   */
+    RPG_CLASS_ENUM_WHITE_MAGE = 0x4, /* White Mage */
+    RPG_CLASS_ENUM_BLACK_MAGE = 0x5, /* Black Mage */
+    RPG_CLASS_ENUM_BLUE_MAGE  = 0x6, /* Blue Mage  */
+    RPG_CLASS_ENUM_MONK       = 0x7  /* Monk       */
 } rpg_class_enum_t;
 
 typedef enum {
@@ -50,21 +51,23 @@ typedef enum {
 } rpg_element_enum_t;
 
 typedef enum {
-    RPG_WEAPON_ENUM_SWORD  = 0x1, /* Sword  */
-    RPG_WEAPON_ENUM_AXE    = 0x2, /* Axe    */
-    RPG_WEAPON_ENUM_KNIFE  = 0x3, /* Knife  */
-    RPG_WEAPON_ENUM_HAMMER = 0x4, /* Hammer */
-    RPG_WEAPON_ENUM_STAFF  = 0x5, /* Staff  */
-    RPG_WEAPON_ENUM_SPEAR  = 0x6, /* Spear  */
-    RPG_WEAPON_ENUM_BOW    = 0x7  /* Bow    */
+    RPG_WEAPON_ENUM_SWORD    = 0x1, /* Sword     */
+    RPG_WEAPON_ENUM_AXE      = 0x2, /* Axe       */
+    RPG_WEAPON_ENUM_KNIFE    = 0x3, /* Knife     */
+    RPG_WEAPON_ENUM_HAMMER   = 0x4, /* Hammer    */
+    RPG_WEAPON_ENUM_STAFF    = 0x5, /* Staff     */
+    RPG_WEAPON_ENUM_SPEAR    = 0x6, /* Spear     */
+    RPG_WEAPON_ENUM_BOW      = 0x7, /* Bow       */
+    RPG_WEAPON_ENUM_CLAW     = 0x8, /* Claw      */
+    RPG_WEAPON_ENUM_NUNCHUCK = 0x9  /* Nunchucks */
 } rpg_weapon_enum_t;
 
 typedef enum {
-    RPG_ARMOR_ENUM_HELMET = 0x1, /* Helmet */
-    RPG_ARMOR_ENUM_ARMOR  = 0x2, /* Armor  */
-    RPG_ARMOR_ENUM_SHIELD = 0x3, /* Shield */
-    RPG_ARMOR_ENUM_GLOVES = 0x4, /* Gloves */
-    RPG_ARMOR_ENUM_BOOTS  = 0x5  /* Boots  */
+    RPG_GUARD_ENUM_HELMET = 0x1, /* Helmet */
+    RPG_GUARD_ENUM_CAP    = 0x2, /* Cap    */
+    RPG_GUARD_ENUM_SHIELD = 0x3, /* Shield */
+    RPG_GUARD_ENUM_GLOVES = 0x4, /* Gloves */
+    RPG_GUARD_ENUM_BOOTS  = 0x5  /* Boots  */
 } rpg_guard_enum_t;
 
 typedef enum {
