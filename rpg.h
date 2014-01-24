@@ -24,66 +24,66 @@ typedef enum {
 } rpg_status_enum_t;
 
 typedef enum {
-    RPG_RACE_ENUM_HUMAN  = 0x1, /* Human  */
-    RPG_RACE_ENUM_ELF    = 0x2, /* Elf    */
-    RPG_RACE_ENUM_DWARF  = 0x3, /* Dwarf  */
-    RPG_RACE_ENUM_IMP    = 0x4, /* Imp    */
-    RPG_RACE_ENUM_SPRITE = 0x5  /* Sprite */
+    RPG_RACE_HUMAN  = 0x1, /* Human  */
+    RPG_RACE_ELF    = 0x2, /* Elf    */
+    RPG_RACE_DWARF  = 0x3, /* Dwarf  */
+    RPG_RACE_IMP    = 0x4, /* Imp    */
+    RPG_RACE_SPRITE = 0x5  /* Sprite */
 } rpg_race_enum_t;
 
 typedef enum {
-    RPG_CLASS_ENUM_NONE       = 0x0, /* Ordinary   */
-    RPG_CLASS_ENUM_WARRIOR    = 0x1, /* Warrior    */
-    RPG_CLASS_ENUM_THIEF      = 0x2, /* Thief      */
-    RPG_CLASS_ENUM_RED_MAGE   = 0x3, /* Red Mage   */
-    RPG_CLASS_ENUM_WHITE_MAGE = 0x4, /* White Mage */
-    RPG_CLASS_ENUM_BLACK_MAGE = 0x5, /* Black Mage */
-    RPG_CLASS_ENUM_BLUE_MAGE  = 0x6, /* Blue Mage  */
-    RPG_CLASS_ENUM_MONK       = 0x7  /* Monk       */
+    RPG_CLASS_NONE       = 0x0, /* Ordinary   */
+    RPG_CLASS_WARRIOR    = 0x1, /* Warrior    */
+    RPG_CLASS_THIEF      = 0x2, /* Thief      */
+    RPG_CLASS_RED_MAGE   = 0x3, /* Red Mage   */
+    RPG_CLASS_WHITE_MAGE = 0x4, /* White Mage */
+    RPG_CLASS_BLACK_MAGE = 0x5, /* Black Mage */
+    RPG_CLASS_BLUE_MAGE  = 0x6, /* Blue Mage  */
+    RPG_CLASS_MONK       = 0x7  /* Monk       */
 } rpg_class_enum_t;
 
 typedef enum {
-    RPG_ELEMENT_ENUM_NONE  = 0x0, /* Ordinary */
-    RPG_ELEMENT_ENUM_EARTH = 0x1, /* Earth    */
-    RPG_ELEMENT_ENUM_WATER = 0x2, /* Water    */
-    RPG_ELEMENT_ENUM_FIRE  = 0x3, /* Fire     */
-    RPG_ELEMENT_ENUM_AIR   = 0x4  /* Air      */
+    RPG_ELEMENT_NONE  = 0x0, /* Ordinary */
+    RPG_ELEMENT_EARTH = 0x1, /* Earth    */
+    RPG_ELEMENT_WATER = 0x2, /* Water    */
+    RPG_ELEMENT_FIRE  = 0x3, /* Fire     */
+    RPG_ELEMENT_AIR   = 0x4  /* Air      */
 } rpg_element_enum_t;
 
 typedef enum {
-    RPG_WEAPON_ENUM_SWORD    = 0x1, /* Sword     */
-    RPG_WEAPON_ENUM_AXE      = 0x2, /* Axe       */
-    RPG_WEAPON_ENUM_KNIFE    = 0x3, /* Knife     */
-    RPG_WEAPON_ENUM_HAMMER   = 0x4, /* Hammer    */
-    RPG_WEAPON_ENUM_STAFF    = 0x5, /* Staff     */
-    RPG_WEAPON_ENUM_SPEAR    = 0x6, /* Spear     */
-    RPG_WEAPON_ENUM_BOW      = 0x7, /* Bow       */
-    RPG_WEAPON_ENUM_CLAW     = 0x8, /* Claw      */
-    RPG_WEAPON_ENUM_NUNCHUCK = 0x9  /* Nunchucks */
+    RPG_WEAPON_SWORD    = 0x1, /* Sword     */
+    RPG_WEAPON_AXE      = 0x2, /* Axe       */
+    RPG_WEAPON_KNIFE    = 0x3, /* Knife     */
+    RPG_WEAPON_HAMMER   = 0x4, /* Hammer    */
+    RPG_WEAPON_STAFF    = 0x5, /* Staff     */
+    RPG_WEAPON_SPEAR    = 0x6, /* Spear     */
+    RPG_WEAPON_BOW      = 0x7, /* Bow       */
+    RPG_WEAPON_CLAW     = 0x8, /* Claw      */
+    RPG_WEAPON_NUNCHUCK = 0x9  /* Nunchucks */
 } rpg_weapon_enum_t;
 
 typedef enum {
-    RPG_GUARD_ENUM_HELMET = 0x1, /* Helmet */
-    RPG_GUARD_ENUM_CAP    = 0x2, /* Cap    */
-    RPG_GUARD_ENUM_SHIELD = 0x3, /* Shield */
-    RPG_GUARD_ENUM_GLOVES = 0x4, /* Gloves */
-    RPG_GUARD_ENUM_BOOTS  = 0x5  /* Boots  */
+    RPG_GUARD_HELMET = 0x1, /* Helmet */
+    RPG_GUARD_CAP    = 0x2, /* Cap    */
+    RPG_GUARD_SHIELD = 0x3, /* Shield */
+    RPG_GUARD_GLOVES = 0x4, /* Gloves */
+    RPG_GUARD_BOOTS  = 0x5  /* Boots  */
 } rpg_guard_enum_t;
 
 typedef enum {
-    RPG_EFFECT_ENUM_NONE      = 0x0,  /* No effect, ordinary  */
-    RPG_EFFECT_ENUM_SUM_ONE   = 0x1,  /* Sum one targets      */
-    RPG_EFFECT_ENUM_SUB_ONE   = 0x2,  /* Sub one target       */
-    RPG_EFFECT_ENUM_SUM_ALL   = 0x3,  /* Sum all targets      */
-    RPG_EFFECT_ENUM_SUB_ALL   = 0x4,  /* Sub all targets      */
-    RPG_EFFECT_ENUM_KILL      = 0x5,  /* Kill one target      */
-    RPG_EFFECT_ENUM_RESSURECT = 0x6,  /* Ressurect one target */
-    RPG_EFFECT_ENUM_CONFUSE   = 0x7,  /* Confuses one target  */
-    RPG_EFFECT_ENUM_BLIND     = 0x8,  /* Blinds one target    */
-    RPG_EFFECT_ENUM_SLEEP     = 0x9,  /* Sleep one target     */
-    RPG_EFFECT_ENUM_SPEED     = 0xa,  /* Speed up one target  */
-    RPG_EFFECT_ENUM_SLOW      = 0xb,  /* Slow down one target */
-    RPG_EFFECT_ENUM_PARALYZE  = 0xc,  /* Paralyzes one target */
+    RPG_EFFECT_NONE      = 0x0,  /* No effect, ordinary  */
+    RPG_EFFECT_SUM_ONE   = 0x1,  /* Sum one targets      */
+    RPG_EFFECT_SUB_ONE   = 0x2,  /* Sub one target       */
+    RPG_EFFECT_SUM_ALL   = 0x3,  /* Sum all targets      */
+    RPG_EFFECT_SUB_ALL   = 0x4,  /* Sub all targets      */
+    RPG_EFFECT_KILL      = 0x5,  /* Kill one target      */
+    RPG_EFFECT_RESSURECT = 0x6,  /* Ressurect one target */
+    RPG_EFFECT_CONFUSE   = 0x7,  /* Confuses one target  */
+    RPG_EFFECT_BLIND     = 0x8,  /* Blinds one target    */
+    RPG_EFFECT_SLEEP     = 0x9,  /* Sleep one target     */
+    RPG_EFFECT_SPEED     = 0xa,  /* Speed up one target  */
+    RPG_EFFECT_SLOW      = 0xb,  /* Slow down one target */
+    RPG_EFFECT_PARALYZE  = 0xc,  /* Paralyzes one target */
 } rpg_effect_enum_t;
 
 typedef enum {
@@ -189,7 +189,7 @@ void rpg_debug_character(rpg_character_t *character);
 /* Create everything in game */
 rpg_status_enum_t rpg_create_weapon(const char *name, rpg_weapon_enum_t type, int damage, rpg_weapon_t **weapon);
 rpg_status_enum_t rpg_create_armor(const char *name, int defense, rpg_armor_t **armor);
-rpg_status_enum_t rpg_create_guard(const char *name, rpg_guard_enum_t type, int defense, rpg_guard_t **guard);
+rpg_status_enum_t rpg_create_guard(const char *name, int defense, rpg_guard_t **guard);
 
 /* Enumerator to string, the verbose */
 const char *rpg_weapon_enum2str(rpg_weapon_enum_t weapon_enum);

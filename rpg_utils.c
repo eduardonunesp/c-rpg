@@ -3,19 +3,19 @@
 const char *rpg_weapon_enum2str(rpg_weapon_enum_t weapon_enum)
 {
     switch (weapon_enum) {
-        case RPG_WEAPON_ENUM_SWORD: 
+        case RPG_WEAPON_SWORD: 
             return "SWORD";
-        case RPG_WEAPON_ENUM_AXE: 
+        case RPG_WEAPON_AXE: 
             return "AXE";
-        case RPG_WEAPON_ENUM_KNIFE: 
+        case RPG_WEAPON_KNIFE: 
             return "KNIFE";
-        case RPG_WEAPON_ENUM_HAMMER: 
+        case RPG_WEAPON_HAMMER: 
             return "HAMMER";
-        case RPG_WEAPON_ENUM_STAFF: 
+        case RPG_WEAPON_STAFF: 
             return "STAFF";
-        case RPG_WEAPON_ENUM_SPEAR: 
+        case RPG_WEAPON_SPEAR: 
             return "SPEAR";
-        case RPG_WEAPON_ENUM_BOW: 
+        case RPG_WEAPON_BOW: 
             return "BOW";
         default: 
             return "UNKNOW";
@@ -25,13 +25,13 @@ const char *rpg_weapon_enum2str(rpg_weapon_enum_t weapon_enum)
 const char *rpg_guard_enum2str(rpg_guard_enum_t guard_enum) 
 {
     switch (guard_enum) {
-        case RPG_GUARD_ENUM_HELMET:
+        case RPG_GUARD_HELMET:
             return "HELMET";
-        case RPG_GUARD_ENUM_SHIELD:
+        case RPG_GUARD_SHIELD:
             return "SHIELD";
-        case RPG_GUARD_ENUM_GLOVES:
+        case RPG_GUARD_GLOVES:
             return "GLOVES";
-        case RPG_GUARD_ENUM_BOOTS:
+        case RPG_GUARD_BOOTS:
             return "BOOTS";
         default:
             return "UNKNOW";
@@ -41,15 +41,15 @@ const char *rpg_guard_enum2str(rpg_guard_enum_t guard_enum)
 const char *rpg_race_enum2str(rpg_race_enum_t race_enum)
 {
     switch (race_enum) {
-        case RPG_RACE_ENUM_HUMAN:
+        case RPG_RACE_HUMAN:
             return "HUMAN";
-        case RPG_RACE_ENUM_ELF:
+        case RPG_RACE_ELF:
             return "ELF";
-        case RPG_RACE_ENUM_DWARF:
+        case RPG_RACE_DWARF:
             return "DWARF";
-        case RPG_RACE_ENUM_IMP:
+        case RPG_RACE_IMP:
             return "IMP";
-        case RPG_RACE_ENUM_SPRITE:
+        case RPG_RACE_SPRITE:
             return "SPRITE";
         default:
             return "UNKNOW";
